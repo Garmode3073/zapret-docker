@@ -1,0 +1,9 @@
+services:
+    zapret:
+      image: matecik/zapret:latest
+      container_name: zapret
+      ports:
+        - "8888:8888"
+      env_file: stack.env
+      cap_add:
+        - NET_ADMIN
