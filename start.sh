@@ -11,7 +11,7 @@ check_net_admin() {
     fi
 }
 if check_net_admin; then
-    echo "NET_ADMIN izni mevcut. install_easy.sh çalıştırılıyor..."
+    echo "NET_ADMIN izni mevcut."
 else
     echo "!!! ERROR: NET_ADMIN izni yok. Lütfen container'ı --cap-add=NET_ADMIN ile başlatın."
     exit 1
