@@ -24,7 +24,12 @@ else
     echo "!!! Uyarı: ZAPRET_DOMAINS değişkeni tanımlı değil. Lütfen ekleyin."
     exit 1
 fi
-printf "Y\n\n\n3\n\n\nY\n\n\n\n\n\n" | /opt/zapret/install_easy.sh
+
+if [ -f /first_run ]; then
+  echo "install_easy.sh çalıştırılıyor..."
+  printf "Y\n\n\n3\n\n\nY\n\n\n\n\n\n" | /opt/zapret/install_easy.sh
+  rm /first_run
+fi
 
 # Kurallar:
 if [ -n "$ZAPRET_PARAMS" ]; then
